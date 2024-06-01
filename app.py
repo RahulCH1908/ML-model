@@ -17,6 +17,14 @@ Touchscreen= st.selectbox('Please Choose Your Touchscreen',['yes','no'])
 IPS= st.selectbox('Please Choose Your IPS',['yes','no'])
 ppi= st.slider('Please Choose Your ppi',min_value=90,max_value=350,value=220,step=10)
 if st.button("PREDICT PRICE"):
+  if Touchscreen=='yes':
+    Touchscreen=1
+  else:
+    Touchscreen=0
+  if IPS=='yes':
+    IPS=1
+  else:
+    IPS=0
   query=np.array([[Company, TypeName, Cpu, Ram, Gpu, OpSys, Weight,
        Touchscreen, IPS, ppi]])
   op=pipe.predict(query)
