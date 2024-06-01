@@ -25,7 +25,7 @@ if st.button("PREDICT PRICE"):
     IPS=1
   else:
     IPS=0
-  query=np.array([[Company, TypeName, Cpu, Ram, Gpu, OpSys, Weight,
+  query=np.array([[company, Type, Cpu, Ram, Gpu, OpSys, Weight,
        Touchscreen, IPS, ppi]])
   op=pipe.predict(query)
   st.subheader(round(np.exp(op[0])))
